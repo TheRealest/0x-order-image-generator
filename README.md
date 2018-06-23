@@ -27,7 +27,7 @@ The top-level image file `example.png` (shown below) was generated using the fol
 
 ```
 {
-  orderHash: 'abc123',
+  orderHash: 'example',
   makerTokenSymbol: 'WETH',
   takerTokenSymbol: 'ZRX',
   makerTokenAmount: '1.00',
@@ -59,4 +59,4 @@ Just give it a good old:
 coffee index.coffee
 ```
 
-to get the thing running! It runs on port 3000, which is where my changes to the 0x-project website know to look. Images will be stored locally in the `images/` directory.
+to get the thing running! It runs on port 3000, which is where my changes to the 0x-project website know to look. Images will be stored locally in the `images/` directory, which will need to be created if it does not exist.

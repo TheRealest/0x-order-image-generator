@@ -3,8 +3,8 @@
 
 This is a simple server API for rendering 0x order messages, saving them to disk, and providing an endpoint for later fetching them. It uses the `wkhtmltoimage` command line tool (via an npm module) to perform the rendering with support for text formatting and images. The following markdown-like syntax and order data tokens are supported:
 
-- \*\*bold\*\* -> __bold__
-- \_italics\_ -> *italics*
+- `**bold**` -> __bold__
+- `_italics_` -> *italics*
 
 
 - `<<MAKER_TOKEN_SYMBOL>>` -> the currency symbol (e.g. ETH) of the maker token
@@ -59,4 +59,4 @@ Just give it a good old:
 coffee index.coffee
 ```
 
-to get the thing running! It runs on port 3000, which is where my changes to the 0x-project website know to look.
+to get the thing running! It runs on port 3000, which is where my changes to the 0x-project website know to look. Images will be stored locally in the `images/` directory.

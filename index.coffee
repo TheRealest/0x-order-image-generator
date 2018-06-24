@@ -1,4 +1,5 @@
 express = require 'express'
+cors = require 'cors'
 bodyParser = require 'body-parser'
 htmlToImage = require 'wkhtmltoimage'
 
@@ -12,6 +13,7 @@ HTML_TO_IMAGE_OPTIONS =
   cropW: 250
 
 app = express()
+app.use cors()
 app.use bodyParser.json()
 
 app.get '/orderMessageImage', (req, res) ->
@@ -35,7 +37,8 @@ app.post '/orderMessageImage', (req, res) ->
 
   imageOptions = Object.assign {}, HTML_TO_IMAGE_OPTIONS
   imageOptions.output = "#{IMAGE_DIR}#{req.body.orderHash}#{IMAGE_FILE_EXT}"
-  imageStream = htmlToImage.generate orderMessageHtml, imageOptions
+  htmlToImage.generate orderMessageHtml, imageOptions
+  console.log "Generated image for order #{req.body.orderHash}"
   res.end()
 
 app.listen SERVER_PORT, -> console.log "Listening on port #{SERVER_PORT}"

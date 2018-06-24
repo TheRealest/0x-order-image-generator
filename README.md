@@ -19,7 +19,7 @@ This is a simple server API for rendering 0x order messages, saving them to disk
 ### Example
 The top-level image file `example.png` (shown below) was generated using the following message text and params:
 
-![Example rendered message](example.png)
+![Example rendered message](examples/example.png)
 
 ```
 **Hey there.**  I'd like to trade <<MAKER_TOKEN_AMOUNT>> <<MAKER_TOKEN_SYMBOL>> <<MAKER_TOKEN_LOGO>> for <<TAKER_TOKEN_AMOUNT>> <<TAKER_TOKEN_SYMBOL>> <<TAKER_TOKEN_LOGO>>.  **Lorem ipsum dolor** sit amet consectetur _adipiscing_ elit.  **Donec at posuere risus**.
@@ -36,6 +36,15 @@ The top-level image file `example.png` (shown below) was generated using the fol
   takerTokenLogo: 'https://0xproject.localhost:3572/images/token_icons/zero_ex.png'
 }
 ```
+
+#### Order generation flow
+Below are a few screenshots of the updated order generation & fill flow with support for the order messages. The updated fork of the 0x-project repo is here: [`TheRealest/0x-project`](https://github.com/TheRealest/0x-monorepo/) (everything is on the `feature/opengraph-orders` branch).
+
+![Generate order page](examples/generate-order-page.png)
+
+![Order message JSON](examples/order-message-json.png)
+
+![Fill order page](examples/fill-order-page.png)
 
 ### Dependencies
 The server is written in NodeJS and dependencies can be installed with a good old:
